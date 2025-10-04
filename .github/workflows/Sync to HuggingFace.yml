@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'HF/**'  # 只在 HF 資料夾及其子檔案變動時觸發
+      - 'HF/**'
 
 jobs:
   deploy:
@@ -31,7 +31,7 @@ jobs:
           git init
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git remote add space https://user:$HF_TOKEN@huggingface.co/spaces/yoyop1217/Conference
+          git remote add space https://yoyop1217:$HF_TOKEN@huggingface.co/spaces/yoyop1217/Conference
           git checkout -b main
           git add .
           git commit -m "Deploy HF folder only"
